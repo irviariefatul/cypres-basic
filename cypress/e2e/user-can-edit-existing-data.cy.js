@@ -1,10 +1,10 @@
 describe("User Can Edit Existing Data", () => {
-  /*afterEach(() => {
+  afterEach(() => {
     // reset database using cypress command
     cy.exec(
       "cd ../demo-app-cypress-automation && php artisan migrate:fresh --seed"
     );
-  });*/
+  });
   // before each test case
   beforeEach(() => {
     // reset database using cypress command
