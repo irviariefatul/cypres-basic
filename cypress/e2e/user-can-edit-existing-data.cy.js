@@ -39,7 +39,8 @@ describe("User Can Edit Existing Data", () => {
       .and("contain", "User Berhasil Diupdate");
   });
 
-  // soal
+  // Jawaban UTS
+  // Challenge 1
   it.only("Edit User Baru", () => {
     cy.get(".table td")
       .contains("user baru")
@@ -59,6 +60,7 @@ describe("User Can Edit Existing Data", () => {
       .and("contain", "User Berhasil Diupdate");
   });
 
+  // Challenge 2
   it.only("Edit User", () => {
     cy.get(".table td")
       .contains("user")
