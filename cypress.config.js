@@ -1,6 +1,16 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: "mochawesome",
+  reporterOptions: {
+    useInlineDiffs: true,
+    embeddedScreenshots: true,
+    reportDir: "cypress/results",
+    reportFilename: "[name].html",
+    overwrite: true,
+    html: true,
+    json: true,
+  },
   viewportWidth: 1920,
   viewportHeight: 1080,
   screenshotOnRunFailure: true,

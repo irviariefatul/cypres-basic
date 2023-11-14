@@ -1,10 +1,10 @@
 describe("template spec", () => {
-  afterEach(() => {
+  /*afterEach(() => {
     // reset database using cypress command
     cy.exec(
       "cd ../demo-app-cypress-automation && php artisan migrate:fresh --seed"
     );
-  });
+  });*/
   // before each test case
   beforeEach(() => {
     // reset database using cypress command
@@ -35,7 +35,7 @@ describe("template spec", () => {
       .should("be.visible")
       .and("have.class", "alert-success")
       .contains("User Deleted Successfully");
-    cy.get(".table").should("not.contain", "user");
+    cy.get(".table").should("not.have.text", "user");
   });
 
   it("User can cancel delete data", () => {

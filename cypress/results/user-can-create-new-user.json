@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-14T09:15:52.534Z",
+    "end": "2023-11-14T09:19:01.236Z",
+    "duration": 188702,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0688f6aa-22e9-410e-b475-13d50f1b30e0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\user-can-create-new-user.cy.js",
+      "file": "cypress\\e2e\\user-can-create-new-user.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fb721ad4-9f69-464e-9972-5ae94c3916c8",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "user can create new user",
+              "fullTitle": "template spec user can create new user",
+              "timedOut": null,
+              "duration": 72241,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/user-can-create-new-user.cy.js.mp4\"",
+              "code": "cy.get(\"#name\").type(\"baru\");\ncy.get(\"#email\").type(\"baru@gmail.com\");\ncy.get(\"#password\").type(\"1234567890\");\ncy.get(\".btn-primary\").click();\n// assert\ncy.get(\"p\").should(\"be.visible\");\ncy.get(\"p\").should(\"have.text\", \"Data Berhasil Ditambahkan\");\ncy.get(\".nav-link > .d-sm-none\").click();\ncy.get(\".text-danger\").click();",
+              "err": {},
+              "uuid": "9efef3d7-b4db-406a-a6bd-178c144807c7",
+              "parentUUID": "fb721ad4-9f69-464e-9972-5ae94c3916c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create new user because invalid email",
+              "fullTitle": "template spec user cannot create new user because invalid email",
+              "timedOut": null,
+              "duration": 50838,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/user-can-create-new-user.cy.js.mp4\"",
+              "code": "cy.get(\"#name\").type(\"baru\");\ncy.get(\"#email\").type(\"baru\");\ncy.get(\"#password\").type(\"1234567890\");\ncy.get(\".btn-primary\").click();\n// assert\ncy.get(\".invalid-feedback\").should(\"be.visible\");\ncy.get(\".invalid-feedback\").should(\"contain\", \"The email must be a valid email address.\");\ncy.get(\".invalid-feedback\").should(\"have.class\", \"invalid-feedback\");\ncy.get(\".nav-link > .d-sm-none\").click();\ncy.get(\".text-danger\").click();",
+              "err": {},
+              "uuid": "0b9563fa-8c68-4096-8433-5cc6ef2a1f11",
+              "parentUUID": "fb721ad4-9f69-464e-9972-5ae94c3916c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "user cannot create new user because name is required",
+              "fullTitle": "template spec user cannot create new user because name is required",
+              "timedOut": null,
+              "duration": 56549,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/user-can-create-new-user.cy.js.mp4\"",
+              "code": "cy.get(\"#email\").type(\"baru@gmail.com\");\ncy.get(\"#password\").type(\"1234567890\");\ncy.get(\".btn-primary\").click();\n// assert\ncy.get(\".invalid-feedback\").should(\"be.visible\");\ncy.get(\".invalid-feedback\").should(\"have.class\", \"invalid-feedback\");\ncy.get(\".invalid-feedback\").should(\"contain\", \"The name field is required.\");\ncy.get(\".nav-link > .d-sm-none\").click();\ncy.get(\".text-danger\").click();",
+              "err": {},
+              "uuid": "edb30d2f-4a8a-45c8-9792-771c68dcf6f7",
+              "parentUUID": "fb721ad4-9f69-464e-9972-5ae94c3916c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9efef3d7-b4db-406a-a6bd-178c144807c7",
+            "0b9563fa-8c68-4096-8433-5cc6ef2a1f11",
+            "edb30d2f-4a8a-45c8-9792-771c68dcf6f7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 179628,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "useInlineDiffs": true,
+        "embeddedScreenshots": true,
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].html",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

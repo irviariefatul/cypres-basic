@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-14T09:26:02.546Z",
+    "end": "2023-11-14T09:26:16.440Z",
+    "duration": 13894,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "73ad468f-29f7-4fef-bedc-4fb087273afd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\user-can-open-login-page.cy.js",
+      "file": "cypress\\e2e\\user-can-open-login-page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2c8103f6-ddba-4f56-9171-9e8650652091",
+          "title": "User Can Open Login Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can open login page",
+              "fullTitle": "User Can Open Login Page User can open login page",
+              "timedOut": null,
+              "duration": 5473,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/user-can-open-login-page.cy.js.mp4\"",
+              "code": "cy.visit(\"http://localhost:8000\");\ncy.get(\"h4\").should(\"have.text\", \"Login\");",
+              "err": {},
+              "uuid": "e3d3f3db-d533-438d-a919-268246a99939",
+              "parentUUID": "2c8103f6-ddba-4f56-9171-9e8650652091",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3d3f3db-d533-438d-a919-268246a99939"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5473,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "useInlineDiffs": true,
+        "embeddedScreenshots": true,
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].html",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

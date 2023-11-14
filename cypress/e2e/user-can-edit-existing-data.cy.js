@@ -1,10 +1,10 @@
 describe("User Can Edit Existing Data", () => {
-  afterEach(() => {
+  /*afterEach(() => {
     // reset database using cypress command
     cy.exec(
       "cd ../demo-app-cypress-automation && php artisan migrate:fresh --seed"
     );
-  });
+  });*/
   // before each test case
   beforeEach(() => {
     // reset database using cypress command
@@ -41,7 +41,7 @@ describe("User Can Edit Existing Data", () => {
 
   // Jawaban UTS
   // Challenge 1
-  it.only("Edit User Baru", () => {
+  it("Edit User Baru", () => {
     cy.get(".table td")
       .contains("user baru")
       .parent()
@@ -61,7 +61,7 @@ describe("User Can Edit Existing Data", () => {
   });
 
   // Challenge 2
-  it.only("Edit User", () => {
+  it("Edit User", () => {
     cy.get(".table td")
       .contains("user")
       .parent()
@@ -81,5 +81,59 @@ describe("User Can Edit Existing Data", () => {
   });
 
   // negative test case
-  it("negative test case", () => {});
+  it("User cannot edit data with blank username", () => {
+    cy.get(".table td")
+      .contains("user")
+      .parent()
+      .find("a")
+      .contains("Edit")
+      .click();
+    cy.get("#name").clear("user ");
+    cy.get(".btn-primary").contains("Submit").click();
+    cy.get(".invalid-feedback").should("be.visible");
+    cy.get(".invalid-feedback").should("have.class", "invalid-feedback");
+    cy.get(".invalid-feedback").should(
+      "contain",
+      "The name field is required."
+    );
+  });
+
+  it("User cannot edit data with blank email", () => {
+    cy.get(".table td")
+      .contains("user")
+      .parent()
+      .find("a")
+      .contains("Edit")
+      .click();
+    cy.get("#email").clear("user ");
+    cy.get(".btn-primary").contains("Submit").click();
+    cy.get(".invalid-feedback").should("be.visible");
+    cy.get(".invalid-feedback").should("have.class", "invalid-feedback");
+    cy.get(".invalid-feedback").should(
+      "contain",
+      "The email field is required."
+    );
+  });
+
+  it.only("User cannot edit data with all blank fields", () => {
+    cy.get(".table td")
+      .contains("user")
+      .parent()
+      .find("a")
+      .contains("Edit")
+      .click();
+    cy.get("#name").clear("user ");
+    cy.get("#email").clear("user ");
+    cy.get(".btn-primary").contains("Submit").click();
+    cy.get("#name")
+      .next()
+      .should("be.visible")
+      .and("have.class", "invalid-feedback")
+      .and("contain", "The name field is required.");
+    cy.get("#email")
+      .next()
+      .should("be.visible")
+      .and("have.class", "invalid-feedback")
+      .and("contain", "The email field is required.");
+  });
 });
