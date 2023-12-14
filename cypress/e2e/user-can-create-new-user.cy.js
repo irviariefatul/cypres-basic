@@ -69,4 +69,34 @@ describe("template spec", () => {
     cy.get(".nav-link > .d-sm-none").click();
     cy.get(".text-danger").click();
   });
+
+  it("user cannot create new user because password is required", () => {
+    cy.get("#name").type("baru");
+    cy.get("#email").type("baru@gmail.com");
+    cy.get(".btn-primary").click();
+    // assert
+    cy.get(".invalid-feedback").should("be.visible");
+    cy.get(".invalid-feedback").should("have.class", "invalid-feedback");
+    cy.get(".invalid-feedback").should(
+      "contain",
+      "The password field is required."
+    );
+    cy.get(".nav-link > .d-sm-none").click();
+    cy.get(".text-danger").click();
+  });
+
+  it("user cannot create new user because email is required", () => {
+    cy.get("#name").type("baru");
+    cy.get("#password").type("1234567890");
+    cy.get(".btn-primary").click();
+    // assert
+    cy.get(".invalid-feedback").should("be.visible");
+    cy.get(".invalid-feedback").should("have.class", "invalid-feedback");
+    cy.get(".invalid-feedback").should(
+      "contain",
+      "The email field is required."
+    );
+    cy.get(".nav-link > .d-sm-none").click();
+    cy.get(".text-danger").click();
+  });
 });
